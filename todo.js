@@ -1,19 +1,21 @@
-const input=document.getElementById("inputbox");
+const input2=document.querySelector("#inputbox");
+const input1=document.querySelector("#date");
 const button=document.querySelector("button");
 const tasks=document.querySelector(".tasks");
 button.addEventListener("click",()=>{
-    if(input.value==''){
+    if(input2.value=='' || input1.value==''){
         alert("you must write something");
     }
     else{
         let li=document.createElement("li");
-        li.innerHTML=input.value;
+        li.innerHTML=input1.value+":"+input2.value;
         tasks.appendChild(li);
         let span=document.createElement("span");
         span.innerHTML="X";
         li.appendChild(span);
     }
-    input.value='';
+    input2.value='';
+    input1.value='';
 },false);
 
 tasks.addEventListener("click",function(e){
